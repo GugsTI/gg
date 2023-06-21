@@ -1,0 +1,49 @@
+<html>
+<head>
+  <title>Encontrar Maiores Elementos</title>
+
+</
+</head>
+<body>
+  
+ 
+<script>
+   
+
+    function encontrarMaioresElementos(matriz) {
+      const colunas = matriz[0].length;
+      const vetorMaioresElementos = [];
+
+      for (let j = 0; j < colunas; j++) {
+        let maiorElemento = Math.abs(matriz[0][j]);
+
+        for (let i = 1; i < matriz.length; i++) {
+          const elementoAtual = Math.abs(matriz[i][j]);
+
+          if (elementoAtual > maiorElemento) {
+            maiorElemento = elementoAtual;
+          }
+        }
+
+        vetorMaioresElementos.push(maiorElemento);
+      }
+
+      return vetorMaioresElementos;
+    }
+
+    function calcularMaioresElementos() {
+      const matriz = [
+        [1, -2, 3],
+        [4, 5, -6],
+        [7, -8, 9]
+      ];
+
+      const vetorMaioresElementos = encontrarMaioresElementos(matriz);
+      console.log(vetorMaioresElementos);
+    }
+
+    // Chamada da função para cálculo dos maiores elementos
+    calcularMaioresElementos();
+  </script>
+</body>
+</html>
